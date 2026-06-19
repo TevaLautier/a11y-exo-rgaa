@@ -1,0 +1,20 @@
+<div class="so-shell">
+  <div class="so-header">
+    <a class="so-logo" routerLink="/">Mobiliere</a>
+    <div class="so-nav">
+      <a routerLink="/" routerLinkActive="is-active">Accueil</a>
+      <a routerLink="/annonces/recherche" routerLinkActive="is-active">Annonces</a>
+      <a routerLink="/agences/recherche" routerLinkActive="is-active">Agences</a>
+      <a routerLink="/contact" routerLinkActive="is-active">Nous contacter</a>
+      <a routerLink="/mentions-legales" routerLinkActive="is-active">Mention legale</a>
+    </div>
+  </div>
+
+  <div class="so-main">
+    <router-outlet></router-outlet>
+  </div>
+
+  <div class="so-footer">
+    <a routerLink="/mentions-legales">Mentions legales</a>
+  </div>
+</div>

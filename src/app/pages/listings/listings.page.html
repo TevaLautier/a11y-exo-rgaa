@@ -1,0 +1,15 @@
+<h2 class="so-h1">Recherche de biens</h2>
+
+<app-listings-layout
+  [listings]="vm.listings()"
+  [city]="vm.city()"
+  [selectedType]="vm.selectedType()"
+  [chartOptions]="vm.chartOptions()"
+  [chartRows]="vm.chartRows()"
+  [sortColumn]="vm.sortColumn()"
+  [sortDirection]="vm.sortDirection()"
+  (cityChange)="vm.onCityChange($event)"
+  (typeChange)="vm.onTypeChange($event)"
+  (chartSelect)="vm.onChartSelect($event)"
+  (sortChange)="vm.onSortChange($event)"
+></app-listings-layout>

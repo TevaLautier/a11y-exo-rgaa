@@ -1,0 +1,8 @@
+<div class="so-card">
+  @if (imageSrc()) {
+    <img class="so-card__img" [src]="imageSrc()" />
+  }
+  <div class="so-card__body">
+    <ng-content></ng-content>
+  </div>
+</div>

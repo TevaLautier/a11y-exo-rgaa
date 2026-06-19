@@ -1,0 +1,27 @@
+@if (agency()) {
+  <img [src]="agency()!.image" alt="Image" class="w-full h-55 object-cover" />
+  <p>{{ agency()!.description }}</p>
+
+  @if (responsable()) {
+    <p><strong>Responsable:</strong></p>
+
+    <div class="flex gap-3 mt-3">
+      <img [src]="responsable()!.avatar" alt="Photo du responsable" />
+      <p>{{ responsable()!.name }} ({{ responsable()!.role }})</p>
+    </div>
+  }
+  <div class="flex justify-between items-center">
+    <div><strong>Localisation:</strong></div>
+    <a
+      [href]="'https://www.google.com/maps/dir/?api=1&destination=' + agency()!.city"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="so-btn so-btn-primary mt-3"
+    >
+      Obtenir l'itinéraire sur Google Maps
+    </a>
+  </div>
+  <atomic-map-city [city]="agency()!.city"></atomic-map-city>
+} @else {
+  <p>Agence introuvable.</p>
+}

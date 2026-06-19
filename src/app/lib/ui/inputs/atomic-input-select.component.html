@@ -1,0 +1,8 @@
+<div class="so-field">
+  <label [for]="id()">{{ label() }}</label>
+  <select [id]="id()" class="so-input" [value]="value()" (change)="onChange($event)">
+    @for (option of options(); track option.value) {
+      <option [value]="option.value">{{ option.label }}</option>
+    }
+  </select>
+</div>

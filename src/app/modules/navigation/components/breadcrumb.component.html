@@ -1,0 +1,8 @@
+<div class="so-breadcrumb" aria-label="Fil d'Ariane">
+  @for (link of links(); track link.link; let last = $last) {
+    <a [routerLink]="link.link">{{ link.label }}</a>
+    @if (!last) {
+      <span>></span>
+    }
+  }
+</div>

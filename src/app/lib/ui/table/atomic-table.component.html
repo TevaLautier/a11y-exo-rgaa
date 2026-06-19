@@ -1,0 +1,37 @@
+<table class="so-table">
+  <thead>
+    <tr>
+      @for (header of headers(); track header.key) {
+        <th
+          (click)="isSortable(header.key) && sortChange.emit(header.key)"
+          (keydown.enter)="isSortable(header.key) && sortChange.emit(header.key)"
+          (keydown.space)="isSortable(header.key) && sortChange.emit(header.key); $event.preventDefault()"
+          [attr.aria-sort]="sortColumn() === header.key ? sortDirection() : 'none'"
+          [attr.tabindex]="isSortable(header.key) ? 0 : null"
+        >
+          {{ header.label }}
+          @if (isSortable(header.key)) {
+            <span aria-label="tri complexe de la colonne {{ header.label }} actuellement {{ sortDirection() }}">
+              {{ iconFor(header.key) }}
+            </span>
+          }
+        </th>
+      }
+    </tr>
+  </thead>
+  <tbody>
+    @for (row of rows(); track row['id']) {
+      <tr>
+        @for (header of headers(); track header.key) {
+          <td>
+            @if (isCustomColumn(header.key) && cellTemplate(); as tpl) {
+              <ng-container *ngTemplateOutlet="tpl; context: { $implicit: row, key: header.key }"></ng-container>
+            } @else {
+              {{ row[header.key] }}
+            }
+          </td>
+        }
+      </tr>
+    }
+  </tbody>
+</table>

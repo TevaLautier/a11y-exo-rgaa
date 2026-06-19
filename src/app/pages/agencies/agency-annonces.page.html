@@ -1,0 +1,21 @@
+@if (agency) {
+  <div class="flex justify-between items-center">
+    <h2 class="so-h1">Annonces de {{ agency.name }}</h2>
+    <a [routerLink]="['/agences/recherche', agency.id]">Retour a l agence</a>
+  </div>
+}
+
+<app-listings-layout
+  [listings]="vm.listings()"
+  [city]="vm.city()"
+  [selectedType]="vm.selectedType()"
+  [chartOptions]="vm.chartOptions()"
+  [chartRows]="vm.chartRows()"
+  [sortColumn]="vm.sortColumn()"
+  [sortDirection]="vm.sortDirection()"
+  [seeLinkBuilder]="seeLinkBuilder"
+  (cityChange)="vm.onCityChange($event)"
+  (typeChange)="vm.onTypeChange($event)"
+  (chartSelect)="vm.onChartSelect($event)"
+  (sortChange)="vm.onSortChange($event)"
+></app-listings-layout>

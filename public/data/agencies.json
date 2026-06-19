@@ -1,0 +1,158 @@
+[
+  {
+    "id": 1,
+    "name": "L’Abri Côtier",
+    "city": "La Rochelle",
+    "description": "Specialiste des maisons de bord de mer.",
+    "image": "https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=900&q=80",
+    "manager": {
+      "name": "Jean Bobine",
+      "role": "Directeur",
+      "avatar": "https://i.pravatar.cc/150?u=jean-bobine"
+    }
+  },
+  {
+    "id": 2,
+    "name": "Vente en Poupe",
+    "city": "Nantes",
+    "description": "Annonces premium pour familles et investisseurs.",
+    "image": "https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=900&q=80",
+    "manager": {
+      "name": "Sarah Croche",
+      "role": "Commerciale",
+      "avatar": "https://i.pravatar.cc/150?u=sarah-croche"
+    }
+  },
+  {
+    "id": 3,
+    "name": "Toit et Moi",
+    "city": "Lille",
+    "description": "Du studio cosy aux grandes maisons de ville.",
+    "image": "https://images.unsplash.com/photo-1480074568708-e7b720bb3f09?auto=format&fit=crop&w=900&q=80",
+    "manager": {
+      "name": "Yvan Desapparts",
+      "role": "Negociateur",
+      "avatar": "https://i.pravatar.cc/150?u=yvan-desapparts"
+    }
+  },
+  {
+    "id": 4,
+    "name": "L’Agence Tout Risque",
+    "city": "Bordeaux",
+    "description": "Agence historique avec equipe tres creative.",
+    "image": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=80",
+    "manager": {
+      "name": "Therese Ponsable",
+      "role": "Accueil",
+      "avatar": "https://i.pravatar.cc/150?u=therese-ponsable"
+    }
+  },
+  {
+    "id": 5,
+    "name": "L’Apparté",
+    "city": "Paris",
+    "description": "Specialiste du marche parisien et proche banlieue.",
+    "image": "https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=900&q=80",
+    "manager": {
+      "name": "Anna Lyse",
+      "role": "Diagnostics",
+      "avatar": "https://i.pravatar.cc/150?u=anna-lyse"
+    }
+  },
+  {
+    "id": 6,
+    "name": "Le Mur du Son",
+    "city": "Lyon",
+    "description": "Biens testes pour une excellente isolation.",
+    "image": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=900&q=80",
+    "manager": {
+      "name": "Jean Tanrien",
+      "role": "Expert Acoustique",
+      "avatar": "https://i.pravatar.cc/150?u=jean-tanrien"
+    }
+  },
+  {
+    "id": 7,
+    "name": "La Clef des Ventes",
+    "city": "Rennes",
+    "description": "Accompagnement complet achat/vente location.",
+    "image": "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=900&q=80",
+    "manager": {
+      "name": "Yvon Acheter",
+      "role": "Ventes",
+      "avatar": "https://i.pravatar.cc/150?u=yvon-acheter"
+    }
+  },
+  {
+    "id": 8,
+    "name": "L’Immo-Bilière",
+    "city": "Toulouse",
+    "description": "Le laboratoire officiel des annonces Mobiliere.",
+    "image": "https://images.unsplash.com/photo-1449844908441-8829872d2607?auto=format&fit=crop&w=900&q=80",
+    "manager": {
+      "name": "Patrice E-Moine",
+      "role": "Conseiller Patrimoine",
+      "avatar": "https://i.pravatar.cc/150?u=patrice-e-moine"
+    }
+  },
+  {
+    "id": 9,
+    "name": "A Vendre ou a Louper",
+    "city": "Marseille",
+    "description": "Des opportunites rares et parfois inattendues.",
+    "image": "https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?auto=format&fit=crop&w=900&q=80",
+    "manager": {
+      "name": "Alain Desmurs",
+      "role": "Expert Batiment",
+      "avatar": "https://i.pravatar.cc/150?u=alain-desmurs"
+    }
+  },
+  {
+    "id": 10,
+    "name": "Le Logis-Ciel",
+    "city": "Montpellier",
+    "description": "Biens lumineux, terrasses et vues degagees.",
+    "image": "https://images.unsplash.com/photo-1572120360610-d971b9d7767c?auto=format&fit=crop&w=900&q=80",
+    "manager": {
+      "name": "Justin Ptit-Coin",
+      "role": "Locations Studios",
+      "avatar": "https://i.pravatar.cc/150?u=justin-ptit-coin"
+    }
+  },
+  {
+    "id": 11,
+    "name": "Terrain d’Entente",
+    "city": "Strasbourg",
+    "description": "Promotions et terrains a batir en Alsace.",
+    "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80",
+    "manager": {
+      "name": "Eva Sion",
+      "role": "Comptabilite",
+      "avatar": "https://i.pravatar.cc/150?u=eva-sion"
+    }
+  },
+  {
+    "id": 12,
+    "name": "L'Agence Immorale",
+    "city": "Dijon",
+    "description": "Une agence volontairement pleine de pieges RGAA.",
+    "image": "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=900&q=80",
+    "manager": {
+      "name": "Yvan Desapparts",
+      "role": "Negociateur",
+      "avatar": "https://i.pravatar.cc/150?u=yvan-desapparts-2"
+    }
+  },
+  {
+    "id": 13,
+    "name": "Toit pour Tout",
+    "city": "Nice",
+    "description": "Du pied a terre aux grandes residences.",
+    "image": "https://images.unsplash.com/photo-1600573472550-8090b5e0745e?auto=format&fit=crop&w=900&q=80",
+    "manager": {
+      "name": "Sarah Croche",
+      "role": "Commerciale",
+      "avatar": "https://i.pravatar.cc/150?u=sarah-croche-2"
+    }
+  }
+]

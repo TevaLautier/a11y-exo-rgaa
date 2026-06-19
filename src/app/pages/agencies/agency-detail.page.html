@@ -1,0 +1,10 @@
+@if (agency) {
+  <div class="flex justify-between items-center">
+    <h2 class="so-h1">{{ agency.name }}</h2>
+    <div class="flex items-center gap-4">
+      <a [routerLink]="['/agences', agency.id, 'annonces']">Voir ses annonces</a>
+      <a routerLink="/agences/recherche">Retour</a>
+    </div>
+  </div>
+}
+<app-agency-detail [agency]="agency"></app-agency-detail>

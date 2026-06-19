@@ -1,0 +1,40 @@
+@if (listing()) {
+  <img [src]="listing()!.image" [alt]="listing()!.imageDescription" class="w-full h-55 object-cover" />
+
+  <p>{{ listing()!.description }}</p>
+
+  <div class="listing-info">
+    <div class="info-item">
+      <strong>Adresse:</strong> {{ listing()!.address }}
+    </div>
+    <div class="info-item">
+      <strong>Ville:</strong> {{ listing()!.city }}
+    </div>
+    <div class="info-item">
+      <strong>Type:</strong> {{ listing()!.type }}
+    </div>
+    <div class="info-item">
+      <strong>Prix:</strong> {{ listing()!.price | number: '0.0' }} €
+    </div>
+    <div class="info-item">
+      <strong>Surface:</strong> {{ listing()!.surface }} m²
+    </div>
+    <div class="info-item">
+      <strong>Notation:</strong> {{ listing()!.rating }} ⭐
+    </div>
+    <div class="info-item">
+      <strong>Agence:</strong>
+      @if (agency$ | async; as agency) {
+        @if (agency) {
+          <a [routerLink]="['/agences', agency.id]">{{ agency.name }}</a>
+        } @else {
+          <span>Agence introuvable</span>
+        }
+      }
+    </div>
+  </div>
+
+  <atomic-map-city [city]="listing()!.city"></atomic-map-city>
+} @else {
+  <p>Annonce introuvable.</p>
+}

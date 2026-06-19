@@ -1,0 +1,11 @@
+<div class="so-field">
+  <label [for]="id()">{{ label() }}</label>
+  <input
+    [id]="id()"
+    class="so-input"
+    type="text"
+    [value]="value()"
+    [placeholder]="placeholder()"
+    (input)="onInput($event)"
+  />
+</div>

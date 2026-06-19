@@ -1,0 +1,5 @@
+<div class="so-pagination">
+  <button type="button" (click)="previous.emit()"><</button>
+  <span>{{ page() }} / {{ totalPages() }}</span>
+  <button type="button" (click)="next.emit()">></button>
+</div>

@@ -1,0 +1,18 @@
+<atomic-chart [options]="options()"></atomic-chart>
+
+<table class="so-sr-only">
+  <tr>
+    <th>Tranche</th>
+    <th>Total</th>
+    <th>Action</th>
+  </tr>
+  @for (row of rows(); track row.label) {
+    <tr>
+      <td>{{ row.label }}</td>
+      <td>{{ row.value }}</td>
+      <td>
+        <div class="so-fake-btn" (click)="selectPrice.emit(row.label)">🔍</div>
+      </td>
+    </tr>
+  }
+</table>

@@ -1,0 +1,23 @@
+.so-btn {
+  border: 1px solid transparent;
+  border-radius: 0.625rem;
+  padding: 0.5rem 0.9rem;
+  cursor: pointer;
+}
+
+.so-btn-primary {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.so-btn-secondary {
+  background: #fff;
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.so-btn-tertiary {
+  background: transparent;
+  color: #1f2937;
+  border-color: #d1d5db;
+}
