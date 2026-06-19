@@ -12,10 +12,19 @@
 }
 
 .so-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
   font-size: 1.5rem;
   color: #ff9100;
   font-weight: 700;
   text-decoration: none;
+}
+
+.so-logo-image {
+  width: 3rem;
+  height: 3rem;
+  object-fit: contain;
 }
 
 .so-nav {
