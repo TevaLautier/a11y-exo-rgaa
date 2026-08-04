@@ -5,8 +5,9 @@
 body {
   margin: 0;
   font-family: 'Nunito Sans', 'Segoe UI', sans-serif;
-  color: #1f2937;
-  background: radial-gradient(circle at top right, #fff4df 0%, #fff 45%, #f8fbff 100%);
+  color: var(--color-text-default);
+  background-color: var(--color-white);
+  background: radial-gradient(circle at top right, var(--color-orange-900) 0%, var(--color-white) 45%, var(--color-white) 85%, var(--color-orange-900) 100%);
 }
 
 a {

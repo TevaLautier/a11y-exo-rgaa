@@ -10,6 +10,11 @@
       <a routerLink="/agences/recherche" routerLinkActive="is-active">Agences</a>
       <a routerLink="/contact" routerLinkActive="is-active">Nous contacter</a>
       <a routerLink="/mentions-legales" routerLinkActive="is-active">Mention legale</a>
+      <atomic-button-icon
+        [icon]="currentTheme === 'dark' ? 'light_mode' : 'dark_mode'"
+        label="Changer le theme"
+        (click)="toggleTheme()"
+      ></atomic-button-icon>
     </div>
   </div>
 
