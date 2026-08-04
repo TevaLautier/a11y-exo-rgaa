@@ -13,7 +13,7 @@ export interface ListingsViewModel {
   chartOptions: Signal<Record<string, unknown>>;
   onCityChange(value: string): void;
   onTypeChange(value: string): void;
-  onChartSelect(value: string): void;
+  onSelectPrice(value: string): void;
   onSortChange(column: string): void;
 }
 
@@ -103,7 +103,8 @@ export function createListingsViewModel(params: {
       selectedType.set(value);
       updateQueryParams();
     },
-    onChartSelect(value: string): void {
+    onSelectPrice(value: string): void {
+      console.log('onSelectPrice', value);
       selectedPriceBucket.set(value);
       updateQueryParams();
     },

@@ -1,17 +1,33 @@
 <div class="so-page-grid">
   <div class="so-col-filters">
     <h3>Statistiques des prix</h3>
-    <atomic-chart-accessible [options]="chartOptions()" [rows]="chartRows()" (selectPrice)="chartSelect.emit($event)"></atomic-chart-accessible>
+    <atomic-chart
+      [options]="chartOptions()"
+      [rows]="chartRows()"
+      (selectPrice)="selectPrice.emit($event)"
+    ></atomic-chart>
 
     <h3>Filtres</h3>
 
     <div class="so-pressed-group">
-      <button type="button" (click)="typeChange.emit('Maison')" [attr.aria-pressed]="selectedType() === 'Maison'">Maison</button>
+      <button
+        type="button"
+        (click)="typeChange.emit('Maison')"
+        [attr.aria-pressed]="selectedType() === 'Maison'"
+      >
+        Maison
+      </button>
       <button type="button" (click)="typeChange.emit('Appartement')">Appartement</button>
       <button type="button" (click)="typeChange.emit('Terrain')">Terrain</button>
     </div>
 
-    <atomic-input-text id="city" label="Ville" placeholder="Paris, Lille..." [value]="city()" (valueChange)="cityChange.emit($event)"></atomic-input-text>
+    <atomic-input-text
+      id="city"
+      label="Ville"
+      placeholder="Paris, Lille..."
+      [value]="city()"
+      (valueChange)="cityChange.emit($event)"
+    ></atomic-input-text>
 
     <label for="city-autocomplete">Ville (autocomplete)</label>
     <input id="city-autocomplete" list="cities" class="so-input" />
@@ -41,10 +57,18 @@
       }
 
       @if (key === 'actions') {
-        <a class="so-icon-link" [routerLink]="editLinkBuilder()(row['id'])" [attr.aria-label]="'Editer l annonce ' + row['title']">
+        <a
+          class="so-icon-link"
+          [routerLink]="editLinkBuilder()(row['id'])"
+          [attr.aria-label]="'Editer l annonce ' + row['title']"
+        >
           <mat-icon>edit</mat-icon>
         </a>
-        <a class="so-icon-link" [routerLink]="seeLinkBuilder()(row['id'])" [attr.aria-label]="'Voir l annonce ' + row['title']">
+        <a
+          class="so-icon-link"
+          [routerLink]="seeLinkBuilder()(row['id'])"
+          [attr.aria-label]="'Voir l annonce ' + row['title']"
+        >
           <mat-icon>visibility</mat-icon>
         </a>
       }

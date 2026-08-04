@@ -3,7 +3,7 @@ import { Component, computed, input, output } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
 import { Listing } from '../../models';
-import { AtomicChartAccessibleComponent, AtomicInputTextComponent, AtomicPaginationComponent, AtomicTableComponent } from '@so-ui';
+import {  AtomicChartComponent, AtomicInputTextComponent, AtomicPaginationComponent, AtomicTableComponent } from '@so-ui';
 
 @Component({
   selector: 'app-listings-layout',
@@ -12,7 +12,7 @@ import { AtomicChartAccessibleComponent, AtomicInputTextComponent, AtomicPaginat
     MatIconModule,
     RouterLink,
     CurrencyPipe,
-    AtomicChartAccessibleComponent,
+    AtomicChartComponent,
     AtomicInputTextComponent,
     AtomicPaginationComponent,
     AtomicTableComponent
@@ -41,7 +41,7 @@ export class ListingsLayoutComponent {
   readonly cityChange = output<string>();
   readonly typeChange = output<string>();
   readonly sortChange = output<string>();
-  readonly chartSelect = output<string>();
+  readonly selectPrice = output<string>();
 
   readonly tableRows = computed(() => this.listings().map((listing) => ({ ...listing, actions: '' })));
 }
