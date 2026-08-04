@@ -40,7 +40,9 @@ export function createListingsViewModel(params: {
     }
 
     if (selectedPriceBucket()) {
-      const [min, max] = selectedPriceBucket().split('-').map((value) => Number.parseInt(value, 10));
+      const [min, max] = selectedPriceBucket()
+        .split('-')
+        .map((value) => Number.parseInt(value, 10));
       result = result.filter((item) => item.price >= min && item.price <= max);
     }
 
@@ -63,15 +65,30 @@ export function createListingsViewModel(params: {
   });
 
   const chartRows = computed(() => [
-    { label: '0-150000', value: params.sourceListings().filter((item) => item.price <= 150000).length },
-    { label: '150001-300000', value: params.sourceListings().filter((item) => item.price > 150000 && item.price <= 300000).length },
-    { label: '300001-1000000', value: params.sourceListings().filter((item) => item.price > 300000).length }
+    {
+      label: '0-150000',
+      value: params.sourceListings().filter((item) => item.price <= 150000).length,
+    },
+    {
+      label: '150001-300000',
+      value: params.sourceListings().filter((item) => item.price > 150000 && item.price <= 300000)
+        .length,
+    },
+    {
+      label: '300001-1000000',
+      value: params.sourceListings().filter((item) => item.price > 300000).length,
+    },
   ]);
 
   const chartOptions = computed(() => ({
     xAxis: { type: 'category', data: chartRows().map((item) => item.label) },
     yAxis: { type: 'value' },
-    series: [{ type: 'bar', data: chartRows().map((item) => item.value), itemStyle: { color: '#ff9100' } }]
+    aria: {
+      show: true,
+    },
+    series: [
+      { type: 'bar', data: chartRows().map((item) => item.value), itemStyle: { color: '#ff9100' } },
+    ],
   }));
 
   const updateQueryParams = (): void => {
@@ -80,9 +97,9 @@ export function createListingsViewModel(params: {
       queryParams: {
         city: city() || null,
         type: selectedType() || null,
-        bucket: selectedPriceBucket() || null
+        bucket: selectedPriceBucket() || null,
       },
-      queryParamsHandling: 'merge'
+      queryParamsHandling: 'merge',
     });
   };
 
@@ -127,6 +144,6 @@ export function createListingsViewModel(params: {
       }
 
       sortDirection.set('asc');
-    }
+    },
   };
 }

@@ -6,12 +6,12 @@ import { provideToastr } from 'ngx-toastr';
 import { provideEchartsCore } from 'ngx-echarts';
 import * as echarts from 'echarts/core';
 import { BarChart } from 'echarts/charts';
-import { GridComponent, LegendComponent, TitleComponent, TooltipComponent } from 'echarts/components';
+import { AriaComponent, GridComponent, LegendComponent, TitleComponent, TooltipComponent } from 'echarts/components';
 import { CanvasRenderer } from 'echarts/renderers';
 
 import { routes } from './app.routes';
 
-echarts.use([BarChart, GridComponent, TooltipComponent, LegendComponent, TitleComponent, CanvasRenderer]);
+echarts.use([BarChart, GridComponent, TooltipComponent, LegendComponent, TitleComponent, CanvasRenderer, AriaComponent]);
 
 export const appConfig: ApplicationConfig = {
   providers: [
