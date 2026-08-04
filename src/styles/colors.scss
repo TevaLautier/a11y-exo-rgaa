@@ -17,11 +17,12 @@
   --color-grey-600: #4b5563;
 
   --color-primary: var(--color-orange-600);
-  --color-secondary: #3b82f6;
-  --color-heading: var(--color-orange-700);
+  --color-secondary: #276cda;
+  --color-heading: var(--color-orange-600);
   --color-border-light: #e5e7eb;
 
   --color-text-default:#1f2937;
+  --color-menu-active: var(--color-orange-600);
 }
 
 [data-theme='dark'] {
@@ -38,4 +39,8 @@
   --color-border-light: #374151;
 
   --color-text-default: #DDD;
+}
+
+[data-contrast='accessible'] {
+
 }

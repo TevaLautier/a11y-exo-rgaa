@@ -11,11 +11,11 @@
 }
 
 .so-logo {
+  color: var(--color-orange-600);
   display: inline-flex;
   align-items: center;
   gap: 0.625rem;
   font-size: 1.5rem;
-  color: #ff9100;
   font-weight: 700;
   text-decoration: none;
 }
@@ -28,16 +28,18 @@
 
 .so-nav {
   display: flex;
-  gap: 1rem;
+  gap: .5rem;
+  align-items: center;
 }
 
 .so-nav a {
   color: #1f2937;
   text-decoration: none;
+  padding: 0 .5rem 0.25rem .5rem;
 }
 
 .so-nav a.is-active {
-  color: var(--color-primary);
+  color: var(--color-menu-active);
 }
 
 .so-main {

@@ -11,6 +11,7 @@ import { AtomicButtonIconComponent } from '@so-ui';
 })
 export class ShellComponent {
   currentTheme: 'light' | 'dark' = 'light';
+  isAccessible = false;
 
   constructor() {
     const htmlElement = document.documentElement;
@@ -23,5 +24,14 @@ export class ShellComponent {
   toggleTheme(): void {
     this.currentTheme = this.currentTheme === 'dark' ? 'light' : 'dark';
     document.documentElement.dataset['theme'] = this.currentTheme;
+  }
+
+  toggleAccessible(): void {
+    this.isAccessible = !this.isAccessible;
+    if (this.isAccessible) {
+      document.documentElement.dataset['contrast'] = 'accessible';
+    } else {
+      delete document.documentElement.dataset['contrast'];
+    }
   }
 }

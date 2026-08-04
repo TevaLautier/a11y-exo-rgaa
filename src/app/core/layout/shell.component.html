@@ -5,16 +5,21 @@
       <span>Mobiliere</span>
     </a>
     <div class="so-nav">
-      <a routerLink="/" routerLinkActive="is-active">Accueil</a>
+      <a routerLink="/" routerLinkActive="is-active" [routerLinkActiveOptions]="{ exact: true }">Accueil</a>
       <a routerLink="/annonces/recherche" routerLinkActive="is-active">Annonces</a>
       <a routerLink="/agences/recherche" routerLinkActive="is-active">Agences</a>
-      <a routerLink="/contact" routerLinkActive="is-active">Nous contacter</a>
+      <a routerLink="/contact" routerLinkActive="is-active" >Nous contacter</a>
       <a routerLink="/mentions-legales" routerLinkActive="is-active">Mention legale</a>
       <atomic-button-icon
         [icon]="currentTheme === 'dark' ? 'light_mode' : 'dark_mode'"
         label="Changer le theme"
         (click)="toggleTheme()"
       ></atomic-button-icon>
+      <!-- <atomic-button-icon
+        [icon]="isAccessible ? 'invert_colors_off' : 'invert_colors'"
+        label="Activer le mode contraste accessible"
+        (click)="toggleAccessible()"
+      ></atomic-button-icon> -->
     </div>
   </div>
 
