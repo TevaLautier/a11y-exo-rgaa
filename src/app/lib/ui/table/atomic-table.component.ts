@@ -40,4 +40,36 @@ export class AtomicTableComponent {
     }
     return 'unfold_more';
   }
+
+  ariaSortFor(key: string): 'ascending' | 'descending' | 'none' {
+    if (this.sortColumn() !== key) {
+      return 'none';
+    }
+
+    if (this.sortDirection() === 'asc') {
+      return 'ascending';
+    }
+
+    if (this.sortDirection() === 'desc') {
+      return 'descending';
+    }
+
+    return 'none';
+  }
+
+  sortLabelFor(key: string): string {
+    if (this.sortColumn() !== key) {
+      return 'non triee';
+    }
+
+    if (this.sortDirection() === 'asc') {
+      return 'tri croissant';
+    }
+
+    if (this.sortDirection() === 'desc') {
+      return 'tri decroissant';
+    }
+
+    return 'non triee';
+  }
 }

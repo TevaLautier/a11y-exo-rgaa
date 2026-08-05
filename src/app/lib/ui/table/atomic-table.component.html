@@ -5,14 +5,18 @@
         <th
           (click)="isSortable(header.key) && sortChange.emit(header.key)"
           (keydown.enter)="isSortable(header.key) && sortChange.emit(header.key)"
-          (keydown.space)="isSortable(header.key) && sortChange.emit(header.key); $event.preventDefault()"
-          [attr.aria-sort]="sortColumn() === header.key ? sortDirection() : 'none'"
+          (keydown.space)="
+            isSortable(header.key) && sortChange.emit(header.key); $event.preventDefault()
+          "
+          [attr.aria-sort]="ariaSortFor(header.key)"
           [attr.tabindex]="isSortable(header.key) ? 0 : null"
         >
           {{ header.label }}
           @if (isSortable(header.key)) {
-            <span aria-label="tri complexe de la colonne {{ header.label }} actuellement {{ sortDirection() }}">
-              {{ iconFor(header.key) }}
+            <span
+              aria-label="{{ sortLabelFor(header.key) }}"
+            >
+              <span class="material-icons" aria-hidden="true">{{ iconFor(header.key) }}</span>
             </span>
           }
         </th>
@@ -25,7 +29,9 @@
         @for (header of headers(); track header.key) {
           <td>
             @if (isCustomColumn(header.key) && cellTemplate(); as tpl) {
-              <ng-container *ngTemplateOutlet="tpl; context: { $implicit: row, key: header.key }"></ng-container>
+              <ng-container
+                *ngTemplateOutlet="tpl; context: { $implicit: row, key: header.key }"
+              ></ng-container>
             } @else {
               {{ row[header.key] }}
             }
