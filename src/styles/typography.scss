@@ -36,3 +36,26 @@ $so-heading-line-heights: (
     line-height: map.get($so-heading-line-heights, $level);
   }
 }
+
+.so-transcript {
+  margin-top: 0.5rem;
+  padding: 0.75rem;
+  border: 1px solid var(--color-border-light);
+  border-radius: 0.5rem;
+  background-color: var(--color-white);
+  color: var(--color-text-default);
+}
+
+.so-transcript summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--color-heading);
+}
+
+.so-transcript a {
+  color: var(--color-secondary);
+}
+
+.so-transcript-error {
+  color: var(--color-red);
+}

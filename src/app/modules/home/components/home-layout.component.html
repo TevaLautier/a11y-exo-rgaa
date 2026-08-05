@@ -13,13 +13,11 @@
       </article>
     }
   </div>
-  <button class="so-btn so-btn-secondary so-carousel-pause">
-    Pause
-  </button>
+  <button class="so-btn so-btn-secondary so-carousel-pause">Pause</button>
 </div>
 
 <div class="so-agencies-preview">
-  <h3>Nos agences coup de coeur</h3>
+  <h3 class="so-h3">Nos agences coup de coeur</h3>
   <ul>
     @for (agency of agencies().slice(0, 3); track agency.id) {
       <li>
@@ -28,3 +26,8 @@
     }
   </ul>
 </div>
+
+<atomic-youtube-video
+  videoId="8pYy5POJSXU"
+  title="Investir dans l'immobilier"
+></atomic-youtube-video>

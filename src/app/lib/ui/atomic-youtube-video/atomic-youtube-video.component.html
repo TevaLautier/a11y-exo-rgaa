@@ -1,0 +1,65 @@
+<section
+  class="mt-6 flex flex-col gap-4"
+  [attr.aria-labelledby]="'home-video-title-' + videoId()"
+>
+  <h3 class="so-h3" [id]="'home-video-title-' + videoId()">{{ title() }}</h3>
+
+  <iframe
+    class="w-full max-w-3xl aspect-video rounded"
+    [src]="embedUrl()"
+    loading="lazy"
+    referrerpolicy="strict-origin-when-cross-origin"
+    allow="
+      accelerometer;
+      autoplay;
+      clipboard-write;
+      encrypted-media;
+      gyroscope;
+      picture-in-picture;
+      web-share;
+    "
+    allowfullscreen
+  >
+  </iframe>
+
+  <details class="so-transcript">
+    <summary>Transcription textuelle de la video</summary>
+
+    <div class="mt-3">
+      @if (transcriptResource.isLoading()) {
+        <p class="text-sm">Chargement de la transcription...</p>
+      }
+
+      @if (transcriptResource.status() === 'error') {
+        <p role="alert" class="so-transcript-error text-sm">
+          {{
+            transcriptResource.error()?.message ||
+              'La transcription automatique est indisponible pour le moment.'
+          }}
+          <br />
+          <a
+            class="underline underline-offset-2"
+            [href]="watchUrl()"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Regarder la video sur YouTube avec sous-titres
+            <span class="sr-only">(nouvelle fenetre)</span>
+          </a>
+        </p>
+      }
+
+      @if (transcriptResource.status() === 'resolved' && transcriptResource.value().length) {
+        <ul class="mt-3 list-disc space-y-1 pl-5 text-sm">
+          @for (line of transcriptResource.value(); track line.offset) {
+            <li>{{ line.text }}</li>
+          }
+        </ul>
+      }
+
+      @if (transcriptResource.status() === 'resolved' && !transcriptResource.value().length) {
+        <p class="text-sm">Aucune transcription disponible pour cette video.</p>
+      }
+    </div>
+  </details>
+</section>
