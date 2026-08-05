@@ -1,0 +1,28 @@
+a {
+  color: var(--color-secondary);
+  text-decoration: underline;
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.15em;
+}
+
+a:hover {
+  text-decoration-thickness: 0.12em;
+}
+
+a[target='_blank']::after {
+  display: inline-block;
+  margin-left: 0.25rem;
+  font-family: 'Material Icons', sans-serif;
+  font-feature-settings: 'liga';
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: normal;
+  line-height: 1;
+  text-transform: none;
+  white-space: nowrap;
+  direction: ltr;
+  vertical-align: text-bottom;
+  -webkit-font-smoothing: antialiased;
+  content: 'open_in_new';
+}

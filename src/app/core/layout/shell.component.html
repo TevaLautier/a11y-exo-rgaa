@@ -5,11 +5,12 @@
       <span>Mobiliere</span>
     </a>
     <div class="so-nav">
-      <a routerLink="/" routerLinkActive="is-active" [routerLinkActiveOptions]="{ exact: true }">Accueil</a>
+      <a routerLink="/" routerLinkActive="is-active" [routerLinkActiveOptions]="{ exact: true }"
+        >Accueil</a
+      >
       <a routerLink="/annonces/recherche" routerLinkActive="is-active">Annonces</a>
       <a routerLink="/agences/recherche" routerLinkActive="is-active">Agences</a>
-      <a routerLink="/contact" routerLinkActive="is-active" >Nous contacter</a>
-      <a routerLink="/mentions-legales" routerLinkActive="is-active">Mention legale</a>
+      <a routerLink="/contact" routerLinkActive="is-active">Nous contacter</a>
       <atomic-button-icon
         [icon]="currentTheme === 'dark' ? 'light_mode' : 'dark_mode'"
         label="Changer le theme"
@@ -28,6 +29,8 @@
   </div>
 
   <div class="so-footer">
-    <a routerLink="/mentions-legales">Mentions legales</a>
+    <a routerLink="/mentions-legales" target="_blank"
+      >Mentions légales</a
+    >
   </div>
 </div>

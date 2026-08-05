@@ -57,18 +57,13 @@
       }
 
       @if (key === 'actions') {
-        <a
+        <!-- <a
           class="so-icon-link"
           [routerLink]="editLinkBuilder()(row['id'])"
-          [attr.aria-label]="'Editer l annonce ' + row['title']"
         >
           <mat-icon>edit</mat-icon>
-        </a>
-        <a
-          class="so-icon-link"
-          [routerLink]="seeLinkBuilder()(row['id'])"
-          [attr.aria-label]="'Voir l annonce ' + row['title']"
-        >
+        </a> -->
+        <a class="so-icon-link" [routerLink]="seeLinkBuilder()(row['id'])">
           <mat-icon>visibility</mat-icon>
         </a>
       }

@@ -1,3 +1,10 @@
-<button [type]="type()" class="so-btn" [class.so-btn-primary]="color() === 'primary'" [class.so-btn-secondary]="color() === 'secondary'" [class.so-btn-tertiary]="color() === 'tertiary'">
+<button
+  [type]="type()"
+  class="so-btn"
+  [class.so-btn-primary]="color() === 'primary'"
+  [class.so-btn-secondary]="color() === 'secondary'"
+  [class.so-btn-tertiary]="color() === 'tertiary'"
+  (click)="action()"
+>
   <ng-content></ng-content>
 </button>

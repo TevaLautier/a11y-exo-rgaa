@@ -1,5 +1,8 @@
 .so-contact-form {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 0.5rem;
   max-width: 32rem;
+  align-items: stretch;
+
 }

@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { ReactiveFormsModule, FormControl, FormGroup } from '@angular/forms';
-import { AtomicInputTextComponent } from '@so-ui';
+import { AtomicInputTextComponent, AtomicButtonComponent } from '@so-ui';
 
 @Component({
   selector: 'app-contact-page',
   standalone: true,
-  imports: [ReactiveFormsModule, AtomicInputTextComponent],
+  imports: [ReactiveFormsModule, AtomicInputTextComponent, AtomicButtonComponent],
   templateUrl: './contact.page.html',
   styleUrl: './contact.page.scss'
 })

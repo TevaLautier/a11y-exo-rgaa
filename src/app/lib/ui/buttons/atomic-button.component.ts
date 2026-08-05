@@ -8,5 +8,6 @@ import { Component, input } from '@angular/core';
 })
 export class AtomicButtonComponent {
   readonly type = input<'button' | 'submit'>('button');
+  readonly action = input<() => void>(() => {});
   readonly color = input<'primary' | 'secondary' | 'tertiary'>('primary');
 }

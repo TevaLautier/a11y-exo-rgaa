@@ -13,7 +13,12 @@ export class BreadcrumbService {
       if (segment) {
         fullPath += `/${segment}`;
       }
-      const breadcrumb = current.data['breadcrumb'] as string | undefined;
+      const breadcrumbSource = current.data['breadcrumb'] as
+        | string
+        | ((snapshot: ActivatedRouteSnapshot) => string)
+        | undefined;
+      const breadcrumb =
+        typeof breadcrumbSource === 'function' ? breadcrumbSource(current) : breadcrumbSource;
       if (breadcrumb) {
         trail.push({ label: breadcrumb, link: fullPath || '/' });
       }
