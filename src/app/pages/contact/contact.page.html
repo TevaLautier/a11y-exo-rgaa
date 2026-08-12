@@ -25,7 +25,5 @@
       (valueChange)="form.controls.email.setValue($event)"
     ></atomic-input-text>
   </fieldset>
-  <div class="mt-6">
-    <span (click)="submit()" class="so-btn so-btn-primary" >Envoyer</span>
-  </div>
+  <div (click)="submit()" class="mt-6 so-btn so-btn-primary w-[90px]">Envoyer</div>
 </form>

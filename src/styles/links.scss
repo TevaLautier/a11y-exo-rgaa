@@ -1,12 +1,12 @@
 a {
   color: var(--color-secondary);
-  text-decoration: underline;
-  text-decoration-thickness: 0.08em;
-  text-underline-offset: 0.15em;
+  text-decoration: none;
 }
 
 a:hover {
+  text-decoration: underline;
   text-decoration-thickness: 0.12em;
+  text-underline-offset: 0.15em;
 }
 
 a[target='_blank']::after {

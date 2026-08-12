@@ -3,7 +3,7 @@ import { Component, computed, input, output } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
 import { Listing } from '../../models';
-import {  AtomicChartComponent, AtomicInputTextComponent, AtomicPaginationComponent, AtomicTableComponent } from '@so-ui';
+import { AtomicChartComponent, AtomicInputTextComponent, AtomicPaginationComponent, AtomicTableComponent, AtomicButtonIconComponent } from '@so-ui';
 
 @Component({
   selector: 'app-listings-layout',
@@ -15,8 +15,9 @@ import {  AtomicChartComponent, AtomicInputTextComponent, AtomicPaginationCompon
     AtomicChartComponent,
     AtomicInputTextComponent,
     AtomicPaginationComponent,
-    AtomicTableComponent
-  ],
+    AtomicTableComponent,
+    AtomicButtonIconComponent
+],
   templateUrl: './listings-layout.component.html',
   styleUrl: './listings-layout.component.scss'
 })
