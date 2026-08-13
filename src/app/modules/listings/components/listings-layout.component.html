@@ -71,15 +71,14 @@
           class="so-icon-link"
           [routerLink]="editLinkBuilder()(row['id'])"
         >
-          <mat-icon>edit</mat-icon>
+          <mat-icon fontIcon="edit"></mat-icon>
         </a> -->
-        <a
-          class="so-icon-link"
+
+        <atomic-button-icon
+          [icon]="'visibility'"
+          [label]="'Voir l\'annonce ' + row['title'] + ' - ' + row['city']"
           [routerLink]="seeLinkBuilder()(row['id'])"
-          title="Voir l'annonce {{ row['title'] }} - {{ row['city'] }}"
-        >
-          <mat-icon>visibility</mat-icon>
-        </a>
+        ></atomic-button-icon>
       }
     </ng-template>
 
