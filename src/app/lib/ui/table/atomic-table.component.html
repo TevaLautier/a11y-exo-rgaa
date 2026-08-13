@@ -1,4 +1,10 @@
 <table class="so-table">
+  <caption class="so-sr-only">
+    {{
+      caption()
+    }}
+    Cliquer sur les entêtes permet de trier selon cette entête
+  </caption>
   <thead>
     <tr>
       @for (header of headers(); track header.key) {
@@ -8,14 +14,13 @@
           (keydown.space)="
             isSortable(header.key) && sortChange.emit(header.key); $event.preventDefault()
           "
+          scope="col"
           [attr.aria-sort]="ariaSortFor(header.key)"
           [attr.tabindex]="isSortable(header.key) ? 0 : null"
         >
           {{ header.label }}
           @if (isSortable(header.key)) {
-            <span
-              aria-label="{{ sortLabelFor(header.key) }}"
-            >
+            <span aria-hidden="true">
               <span class="material-icons" aria-hidden="true">{{ iconFor(header.key) }}</span>
             </span>
           }
