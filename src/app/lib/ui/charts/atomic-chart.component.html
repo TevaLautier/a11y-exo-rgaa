@@ -1,4 +1,5 @@
 <div
+  aria-hidden="true"
   class="so-chart"
   echarts
   [initOpts]="initOpts"
@@ -6,3 +7,26 @@
   (chartClick)="chartClick($event)"
 ></div>
 
+<table class="so-sr-only">
+  <caption>
+    {{
+      caption
+    }}
+  </caption>
+  <tr>
+    <th scope="col">Tranche de prix</th>
+    <th scope="col">Nombre d'annonces</th>
+    <th scope="col">Action</th>
+  </tr>
+  @for (row of rows(); track row.label) {
+    <tr>
+      <td>{{ row.label }}</td>
+      <td>{{ row.value }}</td>
+      <td>
+        <button (click)="selectPrice.emit(row.label)">
+          Filtrer la tranche de prix {{ row.label }}
+        </button>
+      </td>
+    </tr>
+  }
+</table>

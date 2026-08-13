@@ -84,7 +84,7 @@ export function createListingsViewModel(params: {
     xAxis: { type: 'category', data: chartRows().map((item) => item.label) },
     yAxis: { type: 'value' },
     aria: {
-      show: true,
+      show: false,
     },
     series: [
       { type: 'bar', data: chartRows().map((item) => item.value), itemStyle: { color: '#ff9100' } },

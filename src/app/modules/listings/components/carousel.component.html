@@ -8,7 +8,7 @@
   <div class="so-carousel-track">
     @for (listing of visibleListings(); track listing.id) {
       <article class="so-slide" [routerLink]="['/annonces/recherche/see/',listing.id]">
-        <img [src]="listing.image" alt="Images" />
+        <img [src]="listing.image" alt="" />
         <h3>{{ listing.title }}</h3>
         <p>{{ listing.city }} - {{ listing.price | currency: 'EUR' }}</p>
       </article>
