@@ -6,5 +6,6 @@
   [title]="label()"
   [routerLink]="link()"
 >
-  <mat-icon>{{ icon() }}</mat-icon>
+  <span class="so-sr-only">{{ label() }}</span>
+  <mat-icon [fontIcon]="icon()"></mat-icon>
 </button>
