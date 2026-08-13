@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable, inject } from '@angular/core';
+import { Injectable, inject, Signal, WritableSignal } from '@angular/core';
 import { Observable, map } from 'rxjs';
 import { Listing, ListingFilters } from '../../models';
 

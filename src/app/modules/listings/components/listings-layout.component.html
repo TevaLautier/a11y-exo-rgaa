@@ -42,6 +42,14 @@
   </div>
 
   <div class="so-col-results">
+    <p role="status">
+      @if (listings().length === 0) {
+        Aucune annonce
+      } @else {
+        {{ listings().length }} annonce{{ listings().length > 1 ? 's' : '' }}
+      }
+    </p>
+
     <atomic-table
       caption="Liste des annonces immobilières"
       [headers]="tableHeaders"
@@ -65,7 +73,11 @@
         >
           <mat-icon>edit</mat-icon>
         </a> -->
-        <a class="so-icon-link" [routerLink]="seeLinkBuilder()(row['id'])">
+        <a
+          class="so-icon-link"
+          [routerLink]="seeLinkBuilder()(row['id'])"
+          title="Voir l'annonce {{ row['title'] }} - {{ row['city'] }}"
+        >
           <mat-icon>visibility</mat-icon>
         </a>
       }
