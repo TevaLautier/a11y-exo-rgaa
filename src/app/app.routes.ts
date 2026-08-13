@@ -44,12 +44,14 @@ export const routes: Routes = [
       agencies: agenciesResolver,
     },
     data: { breadcrumb: 'Accueil' },
+    title: 'Accueil - ' + SUFFIX_TITLE,
   },
   {
     path: 'annonces/recherche',
     component: ListingsPage,
     resolve: { listings: listingsResolver },
     data: { breadcrumb: 'Recherche annonces' },
+    title: "Recherche d'Annonces - " + SUFFIX_TITLE,
   },
   {
     path: 'annonces/recherche/edit/:id',
@@ -64,6 +66,8 @@ export const routes: Routes = [
           breadcrumb: (route: ActivatedRouteSnapshot) =>
             `Edition annonce ${route.parent!.data['annonce'].title}`,
         },
+        title: (route: ActivatedRouteSnapshot) =>
+          `Edition annonce ${route.parent!.data['annonce'].title} - ${SUFFIX_TITLE}`,
       },
     ],
   },
@@ -80,6 +84,8 @@ export const routes: Routes = [
           breadcrumb: (route: ActivatedRouteSnapshot) =>
             `Annonce ${getResolvedListingTitle(route)}`,
         },
+        title: (route: ActivatedRouteSnapshot) =>
+          `Annonce ${getResolvedListingTitle(route)} - ${SUFFIX_TITLE}`,
       },
     ],
   },
@@ -88,6 +94,7 @@ export const routes: Routes = [
     component: AgenciesPage,
     resolve: { agencies: agenciesResolver },
     data: { breadcrumb: 'Agences' },
+    title: 'Agences - ' + SUFFIX_TITLE,
   },
   {
     path: 'agences/recherche/:id',
@@ -102,6 +109,8 @@ export const routes: Routes = [
           breadcrumb: (route: ActivatedRouteSnapshot) =>
             `Agence ${getResolvedAgencyName(route)}`,
         },
+        title: (route: ActivatedRouteSnapshot) =>
+          `Agence ${getResolvedAgencyName(route)} - ${SUFFIX_TITLE}`,
       },
     ],
   },
@@ -118,6 +127,8 @@ export const routes: Routes = [
           breadcrumb: (route: ActivatedRouteSnapshot) =>
             `Agence ${getResolvedAgencyName(route)}`,
         },
+        title: (route: ActivatedRouteSnapshot) =>
+          `Agence ${getResolvedAgencyName(route)} - ${SUFFIX_TITLE}`,
       },
     ],
   },
@@ -135,6 +146,8 @@ export const routes: Routes = [
           breadcrumb: (route: ActivatedRouteSnapshot) =>
             `Annonces de l'agence ${getResolvedAgencyName(route)}`,
         },
+        title: (route: ActivatedRouteSnapshot) =>
+          `Annonces de l'agence ${getResolvedAgencyName(route)} - ${SUFFIX_TITLE}`,
       },
     ],
   },
@@ -152,6 +165,8 @@ export const routes: Routes = [
           breadcrumb: (route: ActivatedRouteSnapshot) =>
             `Annonce ${getResolvedListingTitle(route)} de l'agence ${getResolvedAgencyName(route)}`,
         },
+        title: (route: ActivatedRouteSnapshot) =>
+          `Annonce ${getResolvedListingTitle(route)} de l'agence ${getResolvedAgencyName(route)} - ${SUFFIX_TITLE}`,
       },
     ],
   },
@@ -159,11 +174,13 @@ export const routes: Routes = [
     path: 'contact',
     component: ContactPage,
     data: { breadcrumb: 'Contact' },
+    title: 'Contact - ' + SUFFIX_TITLE,
   },
   {
     path: 'mentions-legales',
     component: LegalPage,
     data: { breadcrumb: 'Mentions legales' },
+    title: 'Mentions legales - ' + SUFFIX_TITLE,
   },
   {
     path: 'inscription',
@@ -174,6 +191,7 @@ export const routes: Routes = [
     path: 'plan-du-site',
     component: SitemapPage,
     data: { breadcrumb: 'Plan du site' },
+    title: 'Plan du site - ' + SUFFIX_TITLE,
   },
   { path: '**', redirectTo: '' },
 ];
