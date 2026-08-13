@@ -4,7 +4,13 @@
   [class.so-btn-primary]="color() === 'primary'"
   [class.so-btn-secondary]="color() === 'secondary'"
   [class.so-btn-tertiary]="color() === 'tertiary'"
-  (click)="action()"
+  (click)="action.emit()"
 >
+  @if (icon() && iconPosition() == 'left') {
+    <mat-icon>{{ icon() }}</mat-icon>
+  }
   <ng-content></ng-content>
+  @if (icon() && iconPosition() == 'right') {
+    <mat-icon>{{ icon() }}</mat-icon>
+  }
 </button>
