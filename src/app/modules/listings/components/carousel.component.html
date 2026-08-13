@@ -7,15 +7,17 @@
     &lsaquo;
   </button>
 
-  <div class="so-carousel-track">
+  <ul class="so-carousel-track">
     @for (listing of visibleListings(); track listing.id) {
-      <a class="so-slide" [routerLink]="['/annonces/recherche/see/', listing.id]">
-        <img [src]="listing.image" alt="" />
-        <h3 class="so-h4">{{ listing.title }}</h3>
-        <p>{{ listing.city }} - {{ listing.price | currency: 'EUR' }}</p>
-      </a>
+      <li>
+        <a class="so-slide" [routerLink]="['/annonces/recherche/see/', listing.id]">
+          <img [src]="listing.image" alt="" />
+          <h3 class="so-h4">{{ listing.title }}</h3>
+          <p>{{ listing.city }} - {{ listing.price | currency: 'EUR' }}</p>
+        </a>
+      </li>
     }
-  </div>
+  </ul>
 
   <button
     class="so-btn so-btn-secondary so-carousel-next"

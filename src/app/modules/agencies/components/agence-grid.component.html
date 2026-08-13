@@ -1,18 +1,20 @@
-<div class="grid grid-cols-1 gap-4 sm:[grid-template-columns:repeat(2,minmax(300px,1fr))]">
+<ul class="grid grid-cols-1 gap-4 sm:[grid-template-columns:repeat(2,minmax(300px,1fr))]">
   @for (agency of agencies(); track agency.id) {
-    <atomic-card
-      (click)="openAgency(agency.id)"
-      (keydown.enter)="openAgency(agency.id)"
-      (keydown.space)="openAgency(agency.id); $event.preventDefault()"
-      tabindex="0"
-      class="cursor-pointer"
-      role="button"
-      [imageSrc]="agency.image"
-    >
-      <h3>{{ agency.name }}</h3>
-      <p>{{ agency.description }}</p>
-      <p><strong>Responsable:</strong> {{ agency.manager.name }} - {{ agency.manager.role }}</p>
-      <a [routerLink]="['/agences/recherche', agency.id]">Voir l'agence</a>
-    </atomic-card>
+    <li>
+      <atomic-card
+        (click)="openAgency(agency.id)"
+        (keydown.enter)="openAgency(agency.id)"
+        (keydown.space)="openAgency(agency.id); $event.preventDefault()"
+        tabindex="0"
+        class="cursor-pointer"
+        role="button"
+        [imageSrc]="agency.image"
+      >
+        <h3>{{ agency.name }}</h3>
+        <p>{{ agency.description }}</p>
+        <p><strong>Responsable:</strong> {{ agency.manager.name }} - {{ agency.manager.role }}</p>
+        <a [routerLink]="['/agences/recherche', agency.id]">Voir l'agence</a>
+      </atomic-card>
+    </li>
   }
-</div>
+</ul>
