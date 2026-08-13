@@ -11,8 +11,8 @@
         <th scope="col" [attr.aria-sort]="ariaSortFor(header.key)">
           @if (isSortable(header.key)) {
             <atomic-button
-              class="w-100"
               [icon]="iconFor(header.key)"
+              iconPosition="right"
               color="tertiary"
               (action)="sortChange.emit(header.key)"
             >
