@@ -1,8 +1,12 @@
+<p class="so-sr-only" [id]="'home-video-transcript-hint-' + videoId()">
+  Une transcription textuelle de cette video est disponible juste en dessous, dans un bloc repliable "Transcription textuelle de la video".
+</p>
 
   <iframe
     class="w-full max-w-3xl aspect-video rounded"
     [src]="embedUrl()"
-    [title]="title()"
+    [title]="'Vidéo :' + title()"
+    [aria-describedby]="'home-video-transcript-hint-' + videoId()"
     loading="lazy"
     referrerpolicy="strict-origin-when-cross-origin"
     allow="
