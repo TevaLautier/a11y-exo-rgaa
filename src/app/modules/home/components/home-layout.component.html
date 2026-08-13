@@ -3,18 +3,7 @@
   <p>Cliquez sur le menu en haut a droite des annonces pour decouvrir les meilleures offres.</p>
 </div>
 
-<div class="so-carousel" aria-roledescription="carousel">
-  <div class="so-carousel-track">
-    @for (listing of featuredListings(); track listing.id) {
-      <article class="so-slide">
-        <img [src]="listing.image" alt="Image" />
-        <h3>{{ listing.title }}</h3>
-        <p>{{ listing.city }} - {{ listing.price | currency: 'EUR' }}</p>
-      </article>
-    }
-  </div>
-  <button class="so-btn so-btn-secondary so-carousel-pause">Pause</button>
-</div>
+<app-carousel [listings]="featuredListings()"></app-carousel>
 
 <div class="so-agencies-preview">
   <h3 class="so-h3">Nos agences coup de coeur</h3>

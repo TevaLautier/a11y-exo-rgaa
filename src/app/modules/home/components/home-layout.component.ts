@@ -1,13 +1,13 @@
 import { Component, input } from '@angular/core';
-import { CurrencyPipe } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { AtomicYoutubeVideoComponent } from '@so-ui';
+import { CarouselComponent } from '../../listings/components/carousel.component';
 import { Agency, Listing } from '../../models';
 
 @Component({
   selector: 'app-home-layout',
   standalone: true,
-  imports: [RouterLink, CurrencyPipe, AtomicYoutubeVideoComponent],
+  imports: [RouterLink, CarouselComponent, AtomicYoutubeVideoComponent],
   templateUrl: './home-layout.component.html',
   styleUrl: './home-layout.component.scss'
 })

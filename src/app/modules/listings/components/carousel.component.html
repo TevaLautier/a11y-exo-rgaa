@@ -1,0 +1,28 @@
+<div class="so-carousel" aria-roledescription="carousel">
+  <button
+    class="so-btn so-btn-secondary so-carousel-prev"
+    (click)="previous()"
+    aria-label="Annonces précédentes"
+  >&lsaquo;</button>
+
+  <div class="so-carousel-track">
+    @for (listing of visibleListings(); track listing.id) {
+      <article class="so-slide">
+        <img [src]="listing.image" alt="Images" />
+        <h3>{{ listing.title }}</h3>
+        <p>{{ listing.city }} - {{ listing.price | currency: 'EUR' }}</p>
+      </article>
+    }
+  </div>
+
+  <button
+    class="so-btn so-btn-secondary so-carousel-next"
+    (click)="next()"
+    aria-label="Annonces suivantes"
+  >&rsaquo;</button>
+
+  <button
+    class="so-btn so-btn-secondary so-carousel-pause"
+    (click)="togglePause()"
+  >{{ paused() ? 'Lecture' : 'Pause' }}</button>
+</div>
