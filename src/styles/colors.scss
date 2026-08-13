@@ -24,7 +24,8 @@
   --color-border-light: #e5e7eb;
 
   --color-text-default:#1f2937;
-  --color-menu-active: var(--color-orange-600);
+
+  --color-menu-active: var(--color-orange-300);
 }
 
 [data-theme='dark'] {
@@ -44,4 +45,11 @@
 }
 
 [data-contrast='accessible'] {
+  --color-primary: var(--color-secondary);
+  --color-primary--hover: var(--color-secondary---hover);
+  --color-heading: var(--color-text-default);
+  --color-menu-active: var(--color-secondary);
+  body{
+    background:var(--color-white);
+  }
 }
