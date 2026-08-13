@@ -10,17 +10,17 @@
 
     <h3>Filtres</h3>
 
-    <div class="so-pressed-group">
-      <button
-        type="button"
-        (click)="typeChange.emit('Maison')"
-        [attr.aria-pressed]="selectedType() === 'Maison'"
-      >
-        Maison
-      </button>
-      <button type="button" (click)="typeChange.emit('Appartement')">Appartement</button>
-      <button type="button" (click)="typeChange.emit('Terrain')">Terrain</button>
-    </div>
+    <ul class="flex gap-3 mb-3">
+      <li>
+        <button type="button" (click)="typeChange.emit('Maison')">Maison</button>
+      </li>
+      <li>
+        <button type="button" (click)="typeChange.emit('Appartement')">Appartement</button>
+      </li>
+      <li>
+        <button type="button" (click)="typeChange.emit('Terrain')">Terrain</button>
+      </li>
+    </ul>
 
     <atomic-input-text
       id="city"
