@@ -15,6 +15,6 @@ export class HomePage {
   private readonly listingsData = this.route.snapshot.data['listings'] as Listing[];
   private readonly agenciesData = this.route.snapshot.data['agencies'] as Agency[];
 
-  readonly featuredListings = computed(() => this.listingsData.slice(0, 4));
+  readonly featuredListings = computed(() => this.listingsData.slice(0, 12));
   readonly agencies = computed(() => this.agenciesData);
 }
