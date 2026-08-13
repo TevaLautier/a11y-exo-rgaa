@@ -33,13 +33,16 @@
 }
 
 .so-nav a {
-  color: #1f2937;
+  color: var(--color-text-default);
+
   text-decoration: none;
   padding: 0 .5rem 0.25rem .5rem;
+  border-bottom: 2px solid transparent;
+
 }
 
 .so-nav a.is-active {
-  color: var(--color-menu-active);
+  border-color: var(--color-menu-active);
 }
 
 .so-main {
