@@ -1,12 +1,13 @@
 import { NgTemplateOutlet } from '@angular/common';
 import { Component, TemplateRef, input, output } from '@angular/core';
+import { AtomicButtonComponent } from "@so-ui/buttons";
 
 type SortDirection = 'asc' | 'desc' | '';
 
 @Component({
   selector: 'atomic-table',
   standalone: true,
-  imports: [NgTemplateOutlet],
+  imports: [NgTemplateOutlet, AtomicButtonComponent],
   templateUrl: './atomic-table.component.html',
   styleUrl: './atomic-table.component.scss'
 })
