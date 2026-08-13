@@ -10,16 +10,14 @@
       @for (header of headers(); track header.key) {
         <th scope="col" [attr.aria-sort]="ariaSortFor(header.key)">
           @if (isSortable(header.key)) {
-            <button
-              (click)="sortChange.emit(header.key)"
-              class="flex gap-1 items-center"
-              [attr.tabindex]="isSortable(header.key) ? 0 : null"
+            <atomic-button
+              class="w-100"
+              [icon]="iconFor(header.key)"
+              color="tertiary"
+              (action)="sortChange.emit(header.key)"
             >
               {{ header.label }}
-              <span aria-hidden="true">
-                <span class="material-icons" aria-hidden="true">{{ iconFor(header.key) }}</span>
-              </span>
-            </button>
+            </atomic-button>
           } @else {
             {{ header.label }}
           }
