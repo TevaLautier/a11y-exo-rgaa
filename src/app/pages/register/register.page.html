@@ -1,0 +1,75 @@
+<div class="page-container">
+  <h1 class="so-h1">Créer un compte</h1>
+
+  <form [formGroup]="form" (ngSubmit)="valider()">
+
+    <div class="section">
+      <div class="field">
+        <label>Nom *</label>
+
+        <input type="text" formControlName="nom">
+        <p class="err-msg" *ngIf="submitted && form.get('nom')?.errors">Erreur sur le nom</p>
+      </div>
+
+      <div class="field">
+        <label>Prénom *</label>
+        <input type="text" formControlName="prenom">
+      </div>
+
+      <p class="err-msg" *ngIf="submitted && form.get('prenom')?.errors">Erreur sur le prénom</p>
+    </div>
+
+    <div class="section">
+      <p class="fake-legend">Coordonnées postales</p>
+
+      <div class="field">
+        <label>Adresse</label>
+        <input type="text" formControlName="rue">
+      </div>
+
+      <div class="row">
+        <div class="field">
+          <label>Code Postal</label>
+          <input type="text" formControlName="cp">
+          <p class="err-msg" *ngIf="submitted && form.get('cp')?.errors">Mauvais code postale</p>
+        </div>
+        <div class="field">
+          <label>Ville</label>
+          <input type="text" formControlName="ville">
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <p class="fake-legend">Date de naissance *</p>
+
+      <div class="row">
+        <div class="field">
+          <label>Jour *</label>
+          <input type="number" formControlName="jj">
+          <p class="err-msg" *ngIf="submitted && form.get('jj')?.errors">Cette date n'existe pas</p>
+
+        </div>
+        <div class="field">
+          <label>Mois *</label>
+          <input type="number" formControlName="mm">
+          <p class="err-msg" *ngIf="submitted && form.get('mm')?.errors">Mois incorrect</p>
+
+        </div>
+        <div class="field">
+          <label>Année *</label>
+          <input type="number" formControlName="aaaa">
+          <p class="err-msg" *ngIf="submitted && form.get('aaaa')?.errors">Année incorrecte</p>
+
+        </div>
+      </div>
+
+      <p class="err-msg" *ngIf="submitted && form.invalid">
+        Vérifiez les champs en rouge
+      </p>
+    </div>
+
+    <atomic-button type="submit">S'inscrire</atomic-button>
+
+  </form>
+</div>

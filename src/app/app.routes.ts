@@ -10,6 +10,7 @@ import { AgencyAnnoncesPage } from './pages/agencies/agency-annonces.page';
 import { ContactPage } from './pages/contact/contact.page';
 import { SitemapPage } from './pages/sitemap/sitemap.page';
 import { LegalPage } from './pages/legal/legal.page';
+import { RegisterPage } from './pages/register/register.page';
 import { ListingEditPage } from './pages/listings/listing-edit.page';
 import { ListingSeePage } from './pages/listings/listing-see.page';
 
@@ -163,6 +164,11 @@ export const routes: Routes = [
     path: 'mentions-legales',
     component: LegalPage,
     data: { breadcrumb: 'Mentions legales' },
+  },
+  {
+    path: 'inscription',
+    component: RegisterPage,
+    data: { breadcrumb: "S'inscrire" },
   },
   {
     path: 'plan-du-site',
