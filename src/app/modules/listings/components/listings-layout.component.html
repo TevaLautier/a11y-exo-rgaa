@@ -77,7 +77,7 @@
         <atomic-button-icon
           [icon]="'visibility'"
           [label]="'Voir l\'annonce ' + row['title'] + ' - ' + row['city']"
-          [routerLink]="seeLinkBuilder()(row['id'])"
+          [link]="seeLinkBuilder()(row['id'])"
         ></atomic-button-icon>
       }
     </ng-template>
