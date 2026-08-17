@@ -18,9 +18,12 @@
 }
 
 .so-btn-secondary {
-  background-color: #fff;
+  background-color: var(--color-white);
   color: var(--color-primary);
   border-color: var(--color-primary);
+  &:hover {
+    color: var(--color-white);
+  }
 }
 
 .so-btn-tertiary {
