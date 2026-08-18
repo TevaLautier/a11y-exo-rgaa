@@ -1,4 +1,5 @@
 <div class="so-shell">
+  <app-skip-links></app-skip-links>
   <div class="so-header">
     <a class="so-logo" routerLink="/" aria-label="Accueil Mobiliere">
       <img src="/assets/logo.png" alt="Logo Mobiliere" class="so-logo-image" />
@@ -25,11 +26,11 @@
     </div>
   </div>
 
-  <div class="so-main">
+  <div class="so-main" id="so-main" >
     <router-outlet></router-outlet>
   </div>
 
-  <div class="so-footer">
+  <div class="so-footer" id="so-footer" >
     <a routerLink="/mentions-legales" target="_blank"
       >Mentions légales</a
     >

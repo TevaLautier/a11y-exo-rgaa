@@ -1,6 +1,7 @@
 import { Component, computed, input, OnDestroy, signal } from '@angular/core';
 import { CurrencyPipe } from '@angular/common';
 import { Listing } from '../../models';
+import { RouterLink } from "@angular/router";
 
 const WINDOW_SIZE = 4;
 const STEP = 3;
@@ -9,7 +10,7 @@ const INTERVAL_MS = 3000;
 @Component({
   selector: 'app-carousel',
   standalone: true,
-  imports: [CurrencyPipe],
+  imports: [CurrencyPipe, RouterLink],
   templateUrl: './carousel.component.html',
   styleUrl: './carousel.component.scss'
 })
