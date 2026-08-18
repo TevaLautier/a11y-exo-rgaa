@@ -10,6 +10,22 @@
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
 
+.so-slide {
+  /* Reset des styles par défaut du lien */
+  display: flex;
+  flex-direction: column;
+  gap:.5rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.so-slide:hover,
+.so-slide:visited,
+.so-slide:active {
+  text-decoration: none;
+  color: inherit;
+}
+
 .so-slide img {
   width: 100%;
   height: 10rem;
