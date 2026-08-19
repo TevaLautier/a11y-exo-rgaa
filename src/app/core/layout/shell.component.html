@@ -1,35 +1,51 @@
 <div class="so-shell">
-  <div class="so-header">
+  <header role="banner" class="so-header">
     <a class="so-logo" routerLink="/" aria-label="Accueil Mobiliere">
       <img src="/assets/logo.png" alt="Logo Mobiliere" class="so-logo-image" />
-      <span>Mobiliere</span>
+      <h1>Mobiliere</h1>
     </a>
-    <div class="so-nav">
-      <a routerLink="/" routerLinkActive="is-active" [routerLinkActiveOptions]="{ exact: true }"
-        >Accueil</a
-      >
-      <a routerLink="/annonces/recherche" routerLinkActive="is-active">Annonces</a>
-      <a routerLink="/agences/recherche" routerLinkActive="is-active">Agences</a>
-      <a routerLink="/contact" routerLinkActive="is-active">Nous contacter</a>
-      <a routerLink="/inscription" routerLinkActive="is-active">S'inscrire</a>
-      <atomic-button-icon
-        [icon]="currentTheme === 'dark' ? 'light_mode' : 'dark_mode'"
-        label="Changer le theme"
-        (click)="toggleTheme()"
-      ></atomic-button-icon>
-      <atomic-button-icon
-        [icon]="isAccessible ? 'invert_colors_off' : 'invert_colors'"
-        label="Activer le mode contraste accessible"
-        (click)="toggleAccessible()"
-      ></atomic-button-icon>
-    </div>
-  </div>
+    <nav role="navigation" aria-label="Navigation principale">
+      <ul class="so-nav">
+        <li>
+          <a routerLink="/" routerLinkActive="is-active" [routerLinkActiveOptions]="{ exact: true }"
+            >Accueil</a
+          >
+        </li>
+        <li>
+          <a routerLink="/annonces/recherche" routerLinkActive="is-active">Annonces</a>
+        </li>
+        <li>
+          <a routerLink="/agences/recherche" routerLinkActive="is-active">Agences</a>
+        </li>
+        <li>
+          <a routerLink="/contact" routerLinkActive="is-active">Nous contacter</a>
+        </li>
+        <li>
+          <a routerLink="/inscription" routerLinkActive="is-active">S'inscrire</a>
+        </li>
+        <li>
+          <atomic-button-icon
+            [icon]="currentTheme === 'dark' ? 'light_mode' : 'dark_mode'"
+            label="Changer le theme"
+            (click)="toggleTheme()"
+          ></atomic-button-icon>
+        </li>
+        <li>
+          <atomic-button-icon
+            [icon]="isAccessible ? 'invert_colors_off' : 'invert_colors'"
+            label="Activer le mode contraste accessible"
+            (click)="toggleAccessible()"
+          ></atomic-button-icon>
+        </li>
+      </ul>
+    </nav>
+  </header>
 
-  <div class="so-main" id="so-main">
+  <main role="main" class="so-main" id="so-main">
     <router-outlet></router-outlet>
-  </div>
+  </main>
 
-  <div class="so-footer" id="so-footer">
+  <footer role="contentinfo" class="so-footer" id="so-footer">
     <a
       routerLink="/mentions-legales"
       target="_blank"
@@ -37,5 +53,5 @@
       rel="noopener noreferrer"
       >Mentions légales</a
     >
-  </div>
+  </footer>
 </div>
