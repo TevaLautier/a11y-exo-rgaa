@@ -2,6 +2,7 @@
   <div class="so-col-filters">
     <h3>Statistiques des prix</h3>
     <atomic-chart
+      caption="Filtrage par tranche de prix"
       [options]="chartOptions()"
       [rows]="chartRows()"
       (selectPrice)="selectPrice.emit($event)"
