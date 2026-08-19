@@ -1,5 +1,6 @@
 <div class="so-shell">
   <header role="banner" class="so-header">
+    <app-skip-links />
     <a class="so-logo" routerLink="/" aria-label="Accueil Mobiliere">
       <img src="/assets/logo.png" alt="Logo Mobiliere" class="so-logo-image" />
       <h1>Mobiliere</h1>
@@ -41,17 +42,24 @@
     </nav>
   </header>
 
-  <main role="main" class="so-main" id="so-main">
+  <main role="main" class="so-main" id="so-main" tabindex="-1">
     <router-outlet></router-outlet>
   </main>
 
-  <footer role="contentinfo" class="so-footer" id="so-footer">
-    <a
-      routerLink="/mentions-legales"
-      target="_blank"
-      title="Mentions légales (nouvelle fenêtre)"
-      rel="noopener noreferrer"
-      >Mentions légales</a
-    >
+  <footer role="contentinfo" class="so-footer" id="so-footer" tabindex="-1">
+    <ul class="flex gap-6">
+      <li>
+        <a
+          routerLink="/mentions-legales"
+          target="_blank"
+          title="Mentions légales (nouvelle fenêtre)"
+          rel="noopener noreferrer"
+          >Mentions légales</a
+        >
+      </li>
+      <li>
+        <a routerLink="/plan-du-site" title="Plan du site">Plan du site</a>
+      </li>
+    </ul>
   </footer>
 </div>
