@@ -7,10 +7,10 @@
   (chartClick)="chartClick($event)"
 ></div>
 
-<table class="so-sr-only">
+<table class="so-sr-only so-table">
   <caption>
     {{
-      caption
+      caption()
     }}
   </caption>
   <tr>
@@ -23,9 +23,13 @@
       <td>{{ row.label }}</td>
       <td>{{ row.value }}</td>
       <td>
-        <button (click)="selectPrice.emit(row.label)">
-          Filtrer la tranche de prix {{ row.label }}
-        </button>
+        <atomic-button-icon
+          color="secondary"
+          icon="filter_list"
+          (action)="selectPrice.emit(row.label)"
+          label="Filtrer la tranche de prix {{ row.label }}"
+        >
+        </atomic-button-icon>
       </td>
     </tr>
   }
