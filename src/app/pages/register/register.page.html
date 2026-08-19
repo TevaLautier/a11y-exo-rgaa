@@ -2,74 +2,144 @@
   <h2 class="so-h1">Créer un compte</h2>
 
   <form [formGroup]="form" (ngSubmit)="valider()">
+    <fieldset class="section">
+      <legend>Informations personnelles</legend>
+      @let nomControl = form.get('nom');
+      @let isNomInvalid = submitted && nomControl?.errors;
 
-    <div class="section">
       <div class="field">
-        <label>Nom *</label>
-
-        <input type="text" formControlName="nom">
-        <p class="err-msg" *ngIf="submitted && form.get('nom')?.errors">Erreur sur le nom</p>
+        <label for="nom">Nom *</label>
+        <input
+          type="text"
+          id="nom"
+          formControlName="nom"
+          autocomplete="family-name"
+          [attr.aria-required]="true"
+          [attr.aria-invalid]="isNomInvalid"
+          [attr.aria-describedby]="isNomInvalid ? 'err-nom' : null"
+        />
+        @if (isNomInvalid) {
+          <p class="err-msg" id="err-nom" role="alert">Veuillez saisir votre nom.</p>
+        }
       </div>
 
+      @let prenomControl = form.get('prenom');
+      @let isPrenomInvalid = submitted && prenomControl?.errors;
+
       <div class="field">
-        <label>Prénom *</label>
-        <input type="text" formControlName="prenom">
+        <label for="prenom">Prénom *</label>
+        <input
+          type="text"
+          id="prenom"
+          formControlName="prenom"
+          autocomplete="given-name"
+          [attr.aria-required]="true"
+          [attr.aria-invalid]="isPrenomInvalid"
+          [attr.aria-describedby]="isPrenomInvalid ? 'err-prenom' : null"
+        />
+
+        @if (isPrenomInvalid) {
+          <p class="err-msg" id="err-prenom" role="alert">Veuillez saisir votre prénom.</p>
+        }
       </div>
+    </fieldset>
 
-      <p class="err-msg" *ngIf="submitted && form.get('prenom')?.errors">Erreur sur le prénom</p>
-    </div>
-
-    <div class="section">
-      <p class="fake-legend">Coordonnées postales</p>
+    <fieldset class="section">
+      <legend class="fake-legend">Coordonnées postales</legend>
 
       <div class="field">
-        <label>Adresse</label>
-        <input type="text" formControlName="rue">
+        <label for="rue">Adresse</label>
+        <input type="text" id="rue" formControlName="rue" autocomplete="street-address" />
       </div>
 
       <div class="row">
+        @let cpControl = form.get('cp');
+        @let isCpInvalid = submitted && cpControl?.errors;
+
         <div class="field">
-          <label>Code Postal</label>
-          <input type="text" formControlName="cp">
-          <p class="err-msg" *ngIf="submitted && form.get('cp')?.errors">Mauvais code postale</p>
+          <label for="cp">Code Postal</label>
+          <input
+            type="text"
+            id="cp"
+            formControlName="cp"
+            autocomplete="postal-code"
+            [attr.aria-invalid]="isCpInvalid"
+            [attr.aria-describedby]="isCpInvalid ? 'err-cp' : null"
+          />
+          @if (isCpInvalid) {
+            <p class="err-msg" id="err-cp" role="alert">
+              Le code postal doit être composé de 5 chiffres. (ex: 35520)
+            </p>
+          }
         </div>
         <div class="field">
-          <label>Ville</label>
-          <input type="text" formControlName="ville">
+          <label for="ville">Ville</label>
+          <input type="text" id="ville" formControlName="ville" autocomplete="address-level2" />
         </div>
       </div>
-    </div>
+    </fieldset>
 
-    <div class="section">
-      <p class="fake-legend">Date de naissance *</p>
+    <fieldset class="section" formGroupName="dateNaissance">
+      <legend class="fake-legend">Date de naissance *</legend>
+
+      @let dateControl = form.get('dateNaissance');
+      @let dateErrors = dateControl?.errors;
+      @let isDateInvalid = submitted && dateControl?.invalid;
 
       <div class="row">
         <div class="field">
-          <label>Jour *</label>
-          <input type="number" formControlName="jj">
-          <p class="err-msg" *ngIf="submitted && form.get('jj')?.errors">Cette date n'existe pas</p>
-
+          <label for="jj">Jour *</label>
+          <input
+            type="number"
+            id="jj"
+            formControlName="jj"
+            autocomplete="bday-day"
+            [attr.aria-required]="true"
+            [attr.aria-invalid]="isDateInvalid"
+            [attr.aria-describedby]="isDateInvalid ? 'err-date' : null"
+          />
         </div>
         <div class="field">
-          <label>Mois *</label>
-          <input type="number" formControlName="mm">
-          <p class="err-msg" *ngIf="submitted && form.get('mm')?.errors">Mois incorrect</p>
-
+          <label for="mm">Mois *</label>
+          <input
+            type="number"
+            id="mm"
+            formControlName="mm"
+            autocomplete="bday-month"
+            [attr.aria-required]="true"
+            [attr.aria-invalid]="isDateInvalid"
+            [attr.aria-describedby]="isDateInvalid ? 'err-date' : null"
+          />
         </div>
         <div class="field">
-          <label>Année *</label>
-          <input type="number" formControlName="aaaa">
-          <p class="err-msg" *ngIf="submitted && form.get('aaaa')?.errors">Année incorrecte</p>
-
+          <label for="aaaa">Année *</label>
+          <input
+            type="number"
+            id="aaaa"
+            formControlName="aaaa"
+            autocomplete="bday-year"
+            [attr.aria-required]="true"
+            [attr.aria-invalid]="isDateInvalid"
+            [attr.aria-describedby]="isDateInvalid ? 'err-date' : null"
+          />
         </div>
       </div>
-
-      <p class="err-msg" *ngIf="submitted && form.invalid">
-        Vérifiez les champs en rouge
-      </p>
-    </div>
-
+      @if (isDateInvalid) {
+        <p class="err-msg" id="err-date" role="alert">
+          @if (dateErrors?.['dateVide']) {
+            La date de naissance est obligatoire.
+          } @else if (dateErrors?.['dateIncomplete']) {
+            Veuillez renseigner le jour, le mois et l'année.
+          } @else if (dateErrors?.['dateInvalide']) {
+            Le jour doit être entre 1 et 31, le mois entre 1 et 12 et l'année entre 1900 et
+            {{ anneeMax }}.
+          } @else if (dateErrors?.['dateInexistante']) {
+            Cette date n'existe pas dans le calendrier.
+          }
+        </p>
+      }
+    </fieldset>
+    <p class="err-msg" *ngIf="submitted && form.invalid">Vérifiez les champs en erreur</p>
     <atomic-button type="submit">S'inscrire</atomic-button>
-
   </form>
 </div>
