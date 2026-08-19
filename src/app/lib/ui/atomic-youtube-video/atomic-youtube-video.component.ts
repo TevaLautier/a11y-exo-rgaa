@@ -17,6 +17,7 @@ export class AtomicYoutubeVideoComponent {
   private static readonly YOUTUBE_ID_PATTERN = /^[A-Za-z0-9_-]{11}$/;
 
   readonly videoId = input.required<string>();
+  readonly title = input.required<string>();
 
   constructor(private readonly sanitizer: DomSanitizer) {}
 
