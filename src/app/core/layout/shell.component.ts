@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { AtomicButtonIconComponent } from '@so-ui';
+import { SkipLinksComponent } from "../skip-links/skip-links.component";
 
 @Component({
   selector: 'app-shell',
   standalone: true,
-  imports: [RouterOutlet, RouterLink, RouterLinkActive, AtomicButtonIconComponent],
+  imports: [RouterOutlet, RouterLink, RouterLinkActive, AtomicButtonIconComponent, SkipLinksComponent],
   templateUrl: './shell.component.html',
   styleUrl: './shell.component.scss'
 })

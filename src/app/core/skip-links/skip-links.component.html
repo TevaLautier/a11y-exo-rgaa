@@ -1,7 +1,9 @@
-<div class="so-skip-links">
+<ul class="so-skip-links">
   @for (link of skipLinks(); track link.target) {
-    <a [routerLink]="currentUrlSegment()" [fragment]="link.target" class="so-skip-link">{{
-      link.label
-    }}</a>
+    <li>
+      <a [routerLink]="currentUrlSegment()" [fragment]="link.target" class="so-skip-link">{{
+        link.label
+      }}</a>
+    </li>
   }
-</div>
+</ul>
