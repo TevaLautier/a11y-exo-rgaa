@@ -14,6 +14,7 @@ echarts.registerLocale('FR', frLocale as LocaleOption);
   styleUrl: './atomic-chart.component.scss',
 })
 export class AtomicChartComponent {
+  readonly caption=input.required<string>();
   readonly initOpts = { locale: 'FR' };
   readonly options = input.required<Record<string, unknown>>();
   readonly rows = input.required<{ label: string; value: number }[]>();
