@@ -13,6 +13,7 @@ type SortDirection = 'asc' | 'desc' | '';
 export class AtomicTableComponent {
   readonly headers = input.required<{ key: string; label: string; sortable?: boolean }[]>();
   readonly rows = input.required<Record<string, unknown>[]>();
+  readonly caption = input.required<string>();
   readonly sortColumn = input<string>('');
   readonly sortDirection = input<SortDirection>('');
   readonly customColumns = input<string[]>([]);
