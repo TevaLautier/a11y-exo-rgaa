@@ -5,8 +5,8 @@
 
 <app-carousel [listings]="featuredListings()"></app-carousel>
 
-<div class="so-agencies-preview">
-  <h3 class="so-h3">Nos agences coup de coeur</h3>
+<section class="so-agencies-preview" aria-labelledby="agences-coup-de-coeur">
+  <h3 class="so-h3" id="agences-coup-de-coeur">Nos agences coup de coeur</h3>
   <ul>
     @for (agency of agencies().slice(0, 3); track agency.id) {
       <li>
@@ -14,10 +14,10 @@
       </li>
     }
   </ul>
-</div>
+</section>
 
-<section class="mt-6 flex flex-col gap-4">
-  <h3 class="so-h3">Investire dans l'immobilier</h3>
+<section class="mt-6 flex flex-col gap-4" aria-labelledby="investissement-immobilier">
+  <h3 class="so-h3" id="investissement-immobilier">Investire dans l'immobilier</h3>
   <atomic-youtube-video
     videoId="8pYy5POJSXU"
     title="Comment investir dans l'immobilier"
