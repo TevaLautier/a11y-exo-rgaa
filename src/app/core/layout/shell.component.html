@@ -15,12 +15,12 @@
       <atomic-button-icon
         [icon]="currentTheme === 'dark' ? 'light_mode' : 'dark_mode'"
         label="Changer le theme"
-        (click)="toggleTheme()"
+        (action)="toggleTheme()"
       ></atomic-button-icon>
       <atomic-button-icon
         [icon]="isAccessible ? 'invert_colors_off' : 'invert_colors'"
         label="Activer le mode contraste accessible"
-        (click)="toggleAccessible()"
+        (action)="toggleAccessible()"
       ></atomic-button-icon>
     </div>
   </div>
