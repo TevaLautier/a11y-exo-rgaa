@@ -2,7 +2,7 @@ import { ApplicationConfig, provideBrowserGlobalErrorListeners } from '@angular/
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { provideHttpClient } from '@angular/common/http';
 import { provideRouter, withInMemoryScrolling } from '@angular/router';
-import { provideToastr } from 'ngx-toastr';
+// import { provideToastr } from 'ngx-toastr';
 import { provideEchartsCore } from 'ngx-echarts';
 import * as echarts from 'echarts/core';
 import type { LocaleOption } from 'echarts/types/src/core/locale.js';
@@ -42,7 +42,7 @@ export const appConfig: ApplicationConfig = {
         scrollPositionRestoration: 'enabled',
       }),
     ),
-    provideToastr(),
+    // provideToastr(),
     provideEchartsCore({ echarts }),
   ],
 };

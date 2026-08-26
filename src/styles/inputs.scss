@@ -4,3 +4,13 @@
   border-radius: 0.5rem;
   padding: 0.5rem 0.625rem;
 }
+.so-field {
+  display: grid;
+  gap: 0.25rem;
+}
+.so-error {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: var(--color-error);
+}

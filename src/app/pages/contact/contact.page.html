@@ -1,29 +1,17 @@
 <div class="so-h2">Nous contacter</div>
 
-<form [formGroup]="form" (ngSubmit)="submit()" class="so-contact-form">
-  <atomic-input-text
-    id="name"
-    label="Nom"
-    [value]="form.controls.name.value"
-    (valueChange)="form.controls.name.setValue($event)"
-  ></atomic-input-text>
-  <atomic-input-text
-    id="email"
-    label="Email"
-    [value]="form.controls.email.value"
-    (valueChange)="form.controls.email.setValue($event)"
-  ></atomic-input-text>
+<form (ngSubmit)="submit()" class="so-contact-form">
+  <atomic-input-text id="name" label="Nom" [formField]="form.name"></atomic-input-text>
 
-  <label for="message">Message</label>
-  <textarea id="message" formControlName="message" class="so-input"></textarea>
-  <fieldset aria-required="true">
-    <legend>Comment souhaitez-vous être contacté ?</legend>
-    <atomic-input-text
-      id="email"
-      label="Email"
-      [value]="form.controls.email.value"
-      (valueChange)="form.controls.email.setValue($event)"
-    ></atomic-input-text>
-  </fieldset>
-  <div (click)="submit()" class="mt-6 so-btn so-btn-primary w-[90px]">Envoyer</div>
+  <atomic-input-text id="email" label="Email" [formField]="form.email"></atomic-input-text>
+
+  <atomic-input-textarea
+    id="message"
+    label="Message"
+    [formField]="form.message"
+  ></atomic-input-textarea>
+
+  <div class="mt-6">
+    <atomic-button (action)="submit()">Envoyer</atomic-button>
+  </div>
 </form>

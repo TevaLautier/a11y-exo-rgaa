@@ -10,7 +10,8 @@
     "baseUrl": "./",
     "paths": {
       "@so-ui": ["src/app/lib/ui"],
-      "@so-ui/*": ["src/app/lib/ui/*"]
+      "@so-ui/*": ["src/app/lib/ui/*"],
+      "@lib/utils": ["src/app/lib/utils"]
     }
   },
   "include": [

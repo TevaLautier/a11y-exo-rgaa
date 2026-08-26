@@ -1,6 +1,6 @@
 <div class="so-field">
   <label [for]="id()">{{ label() }}</label>
-  <input
+  <textarea
     [id]="id()"
     class="so-input"
     type="text"
@@ -9,6 +9,7 @@
     [attr.autocomplete]="autocomplete()"
     (input)="onInput($event)"
     [aria-describedby]="showError() ? id() + '-error' : null"
-  />
+    [aria-invalid]="showError()"
+  ></textarea>
   <atomic-input-error [id]="id()+'-error'" [visible]="showError()" [messages]="errorMessages()" />
 </div>
