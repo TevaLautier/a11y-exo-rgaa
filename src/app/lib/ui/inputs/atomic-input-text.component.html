@@ -8,7 +8,9 @@
     [placeholder]="placeholder()"
     [attr.autocomplete]="autocomplete()"
     (input)="onInput($event)"
+    [aria-required]="required()"
     [aria-describedby]="showError() ? id() + '-error' : null"
+    [aria-invalid]="showError()"
   />
   <atomic-input-error [id]="id()+'-error'" [visible]="showError()" [messages]="errorMessages()" />
 </div>
