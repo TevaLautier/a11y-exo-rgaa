@@ -5,6 +5,7 @@
   [class.so-btn-tertiary]="color() === 'tertiary'"
   [title]="label()"
   [routerLink]="link()"
+  (click)="action.emit()"
 >
   <span class="so-sr-only">{{ label() }}</span>
   <mat-icon [fontIcon]="icon()"></mat-icon>
