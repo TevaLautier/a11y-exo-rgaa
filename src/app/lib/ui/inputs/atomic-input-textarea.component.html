@@ -1,16 +1,20 @@
 <div class="so-field">
-  <label [for]="id()">{{ label() }}</label>
+  <label [for]="gid()">
+    {{ label() }}
+    @if (mandatory()) {
+      <span class="so-required">*</span>
+    }
+  </label>
   <textarea
-    [id]="id()"
+    [id]="gid()"
     class="so-input"
-    type="text"
     [value]="value()"
     [placeholder]="placeholder()"
     [attr.autocomplete]="autocomplete()"
     (input)="onInput($event)"
-    [aria-required]="required()"
-    [aria-describedby]="showError() ? id() + '-error' : null"
+    [aria-required]="mandatory()"
     [aria-invalid]="showError()"
+    [aria-describedby]="showError() ? gid() + '-error' : null"
   ></textarea>
-  <atomic-input-error [id]="id()+'-error'" [visible]="showError()" [messages]="errorMessages()" />
+  <atomic-input-error [id]="gid() + '-error'" [visible]="showError()" [messages]="errorMessages()" />
 </div>

@@ -1,17 +1,28 @@
 <h2 class="so-h2">Nous contacter</h2>
 
 <form (ngSubmit)="submit()" class="so-contact-form">
-  <atomic-input-text id="name" label="Nom" [formField]="form.name"></atomic-input-text>
+  <atomic-input-text
+    gid="name"
+    label="Nom"
+    [mandatory]="true"
+    [formField]="form.name"
+  ></atomic-input-text>
 
-  <atomic-input-text id="email" label="Email" [formField]="form.email"></atomic-input-text>
+  <atomic-input-text
+    gid="email"
+    label="Email"
+    [mandatory]="true"
+    [formField]="form.email"
+  ></atomic-input-text>
 
   <atomic-input-textarea
-    id="message"
+    gid="message"
     label="Message"
+    [mandatory]="true"
     [formField]="form.message"
   ></atomic-input-textarea>
 
   <div class="mt-6">
-    <atomic-button (action)="submit()">Envoyer</atomic-button>
+    <atomic-button type="submit" (action)="submit()">Envoyer</atomic-button>
   </div>
 </form>

@@ -14,9 +14,9 @@ export class AtomicInputTextComponent implements FormValueControl<string> {
   // 1. Contrat requis par FormValueControl
   readonly value = model<string>('');
 
-  readonly id = input<string>(UIDGenerator.nextId());
+  readonly gid = input<string>(UIDGenerator.nextId());
   readonly label = input.required<string>();
-  readonly required = input<boolean>(false);
+  readonly mandatory = input<boolean>(false);
 
   // 2. Signaux d'états alimentés AUTOMATIQUEMENT par la directive parent [formField]
   readonly errors = input<readonly ValidationError.WithOptionalFieldTree[]>([]);
