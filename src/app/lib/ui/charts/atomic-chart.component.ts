@@ -3,13 +3,14 @@ import { NgxEchartsDirective } from 'ngx-echarts';
 import * as echarts from 'echarts/core';
 import frLocale from 'echarts/i18n/langFR.js';
 import { LocaleOption } from 'echarts/types/src/core/locale.js';
+import { AtomicButtonIconComponent } from "@so-ui/buttons";
 
 echarts.registerLocale('FR', frLocale as LocaleOption);
 
 @Component({
   selector: 'atomic-chart',
   standalone: true,
-  imports: [NgxEchartsDirective],
+  imports: [NgxEchartsDirective, AtomicButtonIconComponent],
   templateUrl: './atomic-chart.component.html',
   styleUrl: './atomic-chart.component.scss',
 })
