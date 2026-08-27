@@ -8,21 +8,39 @@
     <nav role="navigation" aria-label="Navigation principale">
       <ul class="so-nav">
         <li>
-          <a routerLink="/" routerLinkActive="is-active" [routerLinkActiveOptions]="{ exact: true }"
+          <a
+            routerLink="/"
+            routerLinkActive="is-active"
+            [ariaCurrentWhenActive]="'page'"
+            [routerLinkActiveOptions]="{ exact: true }"
             >Accueil</a
           >
         </li>
         <li>
-          <a routerLink="/annonces/recherche" routerLinkActive="is-active">Annonces</a>
+          <a
+            routerLink="/annonces/recherche"
+            routerLinkActive="is-active"
+            [ariaCurrentWhenActive]="'page'"
+            >Annonces</a
+          >
         </li>
         <li>
-          <a routerLink="/agences/recherche" routerLinkActive="is-active">Agences</a>
+          <a
+            routerLink="/agences/recherche"
+            routerLinkActive="is-active"
+            [ariaCurrentWhenActive]="'page'"
+            >Agences</a
+          >
         </li>
         <li>
-          <a routerLink="/contact" routerLinkActive="is-active">Nous contacter</a>
+          <a routerLink="/contact" routerLinkActive="is-active" [ariaCurrentWhenActive]="'page'"
+            >Nous contacter</a
+          >
         </li>
         <li>
-          <a routerLink="/inscription" routerLinkActive="is-active">S'inscrire</a>
+          <a routerLink="/inscription" routerLinkActive="is-active" [ariaCurrentWhenActive]="'page'"
+            >S'inscrire</a
+          >
         </li>
         <li>
           <atomic-button-icon
